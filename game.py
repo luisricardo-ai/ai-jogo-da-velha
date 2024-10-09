@@ -58,7 +58,7 @@ class Game:
 
 
     def play(self) -> None:
-        while True:
+        while ' ' in list(self.__board.values()):
             os.system('clear') # cleaning terminal
             self.__show_board()
 
@@ -67,7 +67,7 @@ class Game:
             while True: # wainting move
                 move = input("Jogada: ")
 
-                if self.__check_move(move):  # Se a jogada for válida...
+                if self.__check_move(move):
                     break 
                 else:
                     print(f"jogado do {self.turno} inválida, jogue novamente.")
@@ -88,7 +88,7 @@ class Game:
                 print("EMPATE!!!")
                 break
 
-            # Troca o jogador do próximo turno
+            # Next player
             self.turno = "X" if self.turno == "O" else "O"
 
         self.__show_board()
