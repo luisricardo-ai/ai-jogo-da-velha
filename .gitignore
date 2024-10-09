@@ -1,2 +1,6 @@
-# Ignoring poetry cache
+# Ignoring python cache
 __pycache__/
+
+# Ignoring poetry TOML
+pyproject.toml
+poetry.lock
